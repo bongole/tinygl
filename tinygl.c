@@ -14,7 +14,11 @@
 #include <stdio.h>
 #include <assert.h>
 
-#include <GL/glcorearb.h>
+#if defined (__APPLE_CC__)
+#include <OpenGL/gl3.h>
+#else
+#include <GL/glcorearb.h> // assert GL 3.2 core profile available...
+#endif
 
 const double PI = 3.141592;
 const unsigned int NVERTICES = 13;
